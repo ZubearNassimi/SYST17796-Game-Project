@@ -11,16 +11,39 @@ package ca.sheridancollege.project;
  * should remember to add themselves as a modifier.
  * @author dancye, 2018
  */
-public abstract class Card 
+import java.util.*;
+
+public class Card
 {
-    //default modifier for child classes
+    enum Suit
+    {
+      Hearts, Diamonds, Clubs, Spades
+    };
+
+    enum Name 
+    {
+      Ace (11), Two (2), Three (3), Four (4), Five (5), Six (6), Seven (7), Eight (8), Nine (9), Ten (10), Jack (10), Queen (10), King (10);
+
+      public final int worth;
+
+      private Name (int worth)
+      {
+        this.worth = worth;
+      }
+    };
+
+    private Name name;
+    private Suit  suit;
+
     
-    /**
-     * Students should implement this method for their specific children classes 
-     * @return a String representation of a card. Could be an UNO card, a regular playing card etc.
-     */
-    
-    @Override
-    public abstract String toString();
-    
+    public Card(Name name, Suit suit)
+    {
+        this.name   = name;
+        this.suit   = suit;
+    }
+
+    public String toString()
+    {
+      return name + " of " + suit + " which is worth " + name.worth;
+    }
 }
