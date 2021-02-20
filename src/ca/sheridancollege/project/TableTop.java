@@ -12,6 +12,7 @@ public class TableTop
   public static void main (String [] karan)
   {
     Deck myDeck = new Deck();
+    myDeck.shuffle();
     Card card1 = myDeck.drawCard();
     System.out.println(card1.toString()); 
   }
