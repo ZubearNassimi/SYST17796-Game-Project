@@ -13,7 +13,7 @@ package ca.sheridancollege.project;
 
 import java.util.*;
 
-public class TableTop 
+public class PlayBlackjack 
 {
   public static void main (String [] karan)
   {
