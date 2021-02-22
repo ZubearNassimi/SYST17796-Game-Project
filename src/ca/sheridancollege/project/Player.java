@@ -1,15 +1,17 @@
 /**
- * SYST 17796 Project Winter 2019 Base code.
- * Students can modify and extend to implement their game.
- * Add your name as a modifier and the date!
+ * SYST 17796 - Group 4 - The Runtime Terrors
  */
 package ca.sheridancollege.project;
 
 /**
  * A class that models each Player in the game. Players have an identifier, which should be unique.
- * @author dancye, 2018
+ * @author Karan Boparai, 2020
+ * @author Zubear Nassimi, 2020
+ * @author Aiden Janey, 2020
+ * @author Christina Kwamie, 2020
  */
-public abstract class Player 
+
+public class Player 
 {
     private String playerID; //the unique ID for this player
     
@@ -43,6 +45,5 @@ public abstract class Player
      * The method to be instantiated when you subclass the Player class
      * with your specific type of Player and filled in with logic to play your game.
      */
-    public abstract void play();
     
 }
