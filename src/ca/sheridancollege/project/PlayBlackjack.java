@@ -68,6 +68,7 @@ public class PlayBlackjack
 
     for (Player player : players)
     {
+      System.out.println(player.toString());
       player.hand.currentHand();
       do
       {
@@ -98,8 +99,52 @@ public class PlayBlackjack
         }
       }
       while (player.hand.checkBlackjack() == false && player.hand.checkBlackjack() == false);
+    }
 
-      System.out.println(player.bank.checkBalance());
+    do
+    {
+      dealer.fullHand();
+      if (dealerHand.checkBlackjack() == true)
+      {
+        System.out.println("Dealer has Blackjack!");
+        break;
+      }
+      else if (dealerHand.checkBust() == true)
+      {
+        System.out.println("Dealer has bust");
+        break;
+      }
+      else
+      {
+        if (dealer.checkDealerDraw() == true)
+        {
+          System.out.println("Dealer must draw");
+          dealerHand.addCard(deck.drawCard());
+        }
+        else
+        {
+          System.out.println("Dealer does not need to draw anymore, and they stand");
+          System.out.println("Dealer hand is worth " + dealerHand.currentTotal());
+          break;
+        }
+      }
+    }
+    while (dealerHand.checkBlackjack() == false && dealerHand.checkBust() == false);
+
+    for (Player player : players)
+    {
+      if (player.hand.currentTotal() < 22 && player.hand.currentTotal() > dealerHand.currentTotal())
+      {
+        System.out.println(player.toString() + ", You won!");
+      }
+      else if (player.hand.currentTotal() == dealerHand.currentTotal())
+      {
+        System.out.println(player.toString() + ", You tied");
+      }
+      else
+      {
+        System.out.println(player.toString() + ", You lost");
+      }
     }
   }
 

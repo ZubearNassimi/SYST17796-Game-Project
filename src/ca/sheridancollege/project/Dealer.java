@@ -26,4 +26,27 @@ public class Dealer
     {
         System.out.println("The Dealer's first card is a " + hand.hand.get(1).toString());
     }
+
+    public void fullHand()
+    {
+        System.out.println("The Dealer has: ");
+        for (Card card :  hand.hand)
+        {
+            System.out.println(card.toString());
+        }
+        System.out.println("Dealer's hand is worth: " + hand.currentTotal());
+    }
+
+    public boolean checkDealerDraw()
+    {
+        hand.currentTotal();
+        if (hand.currentTotal() < 17)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
