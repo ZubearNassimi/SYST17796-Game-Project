@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77428d5f-e824-479d-a172-6a1d3a02de8d" name="Default Changelist" comment="Updates">
-      <change afterPath="$PROJECT_DIR$/src/ca/sheridancollege/project/Hand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/sheridancollege/project/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/sheridancollege/project/Bank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/sheridancollege/project/Dealer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/sheridancollege/project/Dealer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ca/sheridancollege/project/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/sheridancollege/project/Deck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/sheridancollege/project/Hand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/sheridancollege/project/Hand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ca/sheridancollege/project/PlayBlackjack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/sheridancollege/project/PlayBlackjack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/sheridancollege/project/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/sheridancollege/project/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +80,7 @@
       <option name="presentableId" value="Default" />
       <updated>1616881546761</updated>
       <workItem from="1616881548165" duration="4554000" />
-      <workItem from="1616947815223" duration="2963000" />
+      <workItem from="1616947815223" duration="4271000" />
     </task>
     <task id="LOCAL-00001" summary="Updates">
       <created>1616947983189</created>
@@ -106,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616948220209</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Updates">
+      <created>1616950842320</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1616950842320</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

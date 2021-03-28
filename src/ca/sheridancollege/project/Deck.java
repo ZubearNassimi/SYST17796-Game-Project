@@ -15,7 +15,7 @@ import java.util.*;
 
 public class Deck
 {
-    ArrayList<Card> deck = new ArrayList<Card>();
+    ArrayList<Card> deck = new ArrayList<>();
 
     public Deck()
     {

@@ -40,6 +40,7 @@ public class Hand
 
     public int currentTotal ()
     {
+        total = 0;
         for (Card card : hand)
         {
             total += card.value();
@@ -47,9 +48,14 @@ public class Hand
         return total;
     }
 
+    public void hit(Card card)
+    {
+        hand.add(card);
+    }
+
     public boolean checkBlackjack()
     {
-        if (currentTotal() == 21)
+        if (total == 21)
         {
             return true;
         }
@@ -61,7 +67,7 @@ public class Hand
 
     public boolean checkBust()
     {
-        if (currentTotal() > 21)
+        if (total > 21)
         {
             return true;
         }

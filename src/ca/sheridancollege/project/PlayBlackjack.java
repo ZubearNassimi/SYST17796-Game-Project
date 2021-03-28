@@ -51,6 +51,7 @@ public class PlayBlackjack
 
   public static void startGame (ArrayList<Player> players)
   {
+    Scanner input = new Scanner(System.in);
     Hand dealerHand = new Hand();
     Dealer dealer = new Dealer(dealerHand);
     Deck deck = new Deck();
@@ -68,6 +69,36 @@ public class PlayBlackjack
     for (Player player : players)
     {
       player.hand.currentHand();
+      do
+      {
+        if (player.hand.checkBlackjack() == true)
+        {
+          System.out.println("You got Blackjack!, you automatically stand");
+          break;
+        }
+        else if (player.hand.checkBust() == true)
+        {
+          System.out.println("You are over 21 and have bust");
+          break;
+        }
+        else
+        {
+          System.out.println("Would you like to hit or stand?");
+          System.out.println("Press 1 for hit or 2 for stand.");
+          int hitOrStand = input.nextInt();
+          if (hitOrStand == 1)
+          {
+            player.hand.addCard(deck.drawCard());
+            player.hand.currentHand();
+          }
+          else
+          {
+            break;
+          }
+        }
+      }
+      while (player.hand.checkBlackjack() == false && player.hand.checkBlackjack() == false);
+
       System.out.println(player.bank.checkBalance());
     }
   }
