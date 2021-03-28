@@ -64,17 +64,16 @@ public class PlayBlackjack
     }
 
     dealer.firstCard();
-    dealer.checkBlackjack;
+    //dealer.checkBlackjack;
 
     for (Player player : players)
     {
       player.currentHand();
-      if (checkBlackjack(player.currentTotal()))
     }
   }
 
-  public boolean checkBlackjack(ArrayList<Card> hand)
+  //public boolean checkBlackjack(ArrayList<Card> hand)
   {
-    if (Card.current)
+
   }
 }
