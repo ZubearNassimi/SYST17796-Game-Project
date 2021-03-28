@@ -11,8 +11,24 @@ package ca.sheridancollege.project;
  * @author Christina Kwamie, 2020
  */
 
+import java.util.*;
+
 public class Dealer 
 {
-    
-    
+    ArrayList<Card> dealerHand = new ArrayList<Card>();
+
+    public Dealer()
+    {
+
+    }
+
+    public void addCard (Card card)
+    {
+        dealerHand.add(card);
+    }
+
+    public void firstCard ()
+    {
+        System.out.println("The Dealer's first card is a " + dealerHand.get(1).toString());
+    }
 }

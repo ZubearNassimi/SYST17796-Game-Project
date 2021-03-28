@@ -11,6 +11,20 @@ package ca.sheridancollege.project;
  * @author Christina Kwamie, 2020
  */
 
-public class Bank {
-    
+import java.util.*;
+
+public class Bank
+{
+    private int balance;
+
+    public Bank (int balance)
+    {
+        this.balance = balance;
+    }
+
+    public int checkBalance()
+    {
+        return balance;
+    }
+
 }

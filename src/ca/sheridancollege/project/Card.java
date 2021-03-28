@@ -42,6 +42,11 @@ public class Card
         this.suit   = suit;
     }
 
+    public int value ()
+    {
+        return name.worth;
+    }
+
     public String toString()
     {
       return name + " of " + suit + " which is worth " + name.worth;

@@ -11,39 +11,52 @@ package ca.sheridancollege.project;
  * @author Christina Kwamie, 2020
  */
 
+import java.util.*;
+
 public class Player 
 {
-    private String playerID; //the unique ID for this player
-    
-    /**
-     * A constructor that allows you to set the player's unique ID
-     * @param name the unique ID to assign to this player.
-     */
-    public Player(String name)
+    private int playerID;
+    private String name;
+    private int chips;
+    private int total;
+    ArrayList<Card> playerHand = new ArrayList<Card>();
+
+    public Player(int playerID, String name, int chips)
     {
-        playerID= name;
-    }
-    
-    /**
-     * @return the playerID
-     */
-    public String getPlayerID() 
-    {
-        return playerID;
+        this.playerID = playerID;
+        this.name = name;
+        this.chips = chips;
     }
 
-    /**
-     * Ensure that the playerID is unique
-     * @param givenID the playerID to set
-     */
-    public void setPlayerID(String givenID) 
+    public void addCard (Card card)
     {
-        playerID = givenID;
+        playerHand.add(card);
     }
-    
-    /**
-     * The method to be instantiated when you subclass the Player class
-     * with your specific type of Player and filled in with logic to play your game.
-     */
-    
+
+    public void currentHand ()
+    {
+        System.out.println("You have: ");
+        for (Card card : playerHand)
+        {
+            System.out.println(card.toString());
+        }
+        System.out.println("Your hand is worth: " + currentTotal());
+    }
+
+    public int currentTotal ()
+    {
+        for (Card card : playerHand)
+        {
+            total += card.value();
+        }
+        return total;
+    }
+    public String toString()
+    {
+        return "Player{" +
+                "playerID=" + playerID +
+                ", name='" + name + '\'' +
+                ", chips=" + chips +
+                '}';
+    }
 }
