@@ -15,20 +15,15 @@ import java.util.*;
 
 public class Dealer 
 {
-    ArrayList<Card> dealerHand = new ArrayList<Card>();
+    Hand hand;
 
-    public Dealer()
+    public Dealer(Hand hand)
     {
-
-    }
-
-    public void addCard (Card card)
-    {
-        dealerHand.add(card);
+        this.hand = hand;
     }
 
     public void firstCard ()
     {
-        System.out.println("The Dealer's first card is a " + dealerHand.get(1).toString());
+        System.out.println("The Dealer's first card is a " + hand.hand.get(1).toString());
     }
 }

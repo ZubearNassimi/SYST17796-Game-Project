@@ -27,4 +27,20 @@ public class Bank
         return balance;
     }
 
+    public boolean verifyBet(int bet)
+    {
+        if (checkBalance() < bet)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+
+    public void placeBet(int bet)
+    {
+        this.balance = balance - bet;
+    }
 }

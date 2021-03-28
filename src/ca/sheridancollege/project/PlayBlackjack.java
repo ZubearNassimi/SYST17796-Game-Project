@@ -15,10 +15,10 @@ import java.util.*;
 
 public class PlayBlackjack 
 {
-  public static void main (String [] karan)
+  public static void main (String [] args)
   {
     Scanner input = new Scanner(System.in);
-    ArrayList<Player> players = new ArrayList<Player>();
+    ArrayList<Player> players = new ArrayList<>();
 
     System.out.println("Hello!, Welcome to Blackjack, Would you like to start a game?");
     System.out.println("Press 1 for Yes, 2 for No");
@@ -39,41 +39,37 @@ public class PlayBlackjack
         String name = input.next();
         System.out.println("Hello " + name + ", how many chip would you like to start with?");
         int chips = input.nextInt();
-        players.add(new Player(playerID, name, chips));
+        Bank bank = new Bank(chips);
+        Hand playerHand = new Hand();
+        players.add(new Player(playerID, name, bank, playerHand));
       }
 
       startGame(players);
     }
-    Deck myDeck = new Deck();
-    myDeck.shuffle();
-    Card card1 = myDeck.drawCard();
 
   }
 
   public static void startGame (ArrayList<Player> players)
   {
-    Dealer dealer = new Dealer();
+    Hand dealerHand = new Hand();
+    Dealer dealer = new Dealer(dealerHand);
     Deck deck = new Deck();
     deck.shuffle();
-    dealer.addCard(deck.drawCard());
-    dealer.addCard(deck.drawCard());
+    dealerHand.addCard(deck.drawCard());
+    dealerHand.addCard(deck.drawCard());
     for (Player player : players)
     {
-      player.addCard(deck.drawCard());
-      player.addCard(deck.drawCard());
+      player.hand.addCard(deck.drawCard());
+      player.hand.addCard(deck.drawCard());
     }
 
     dealer.firstCard();
-    //dealer.checkBlackjack;
 
     for (Player player : players)
     {
-      player.currentHand();
+      player.hand.currentHand();
+      System.out.println(player.bank.checkBalance());
     }
   }
 
-  //public boolean checkBlackjack(ArrayList<Card> hand)
-  {
-
-  }
 }

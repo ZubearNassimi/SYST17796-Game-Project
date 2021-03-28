@@ -17,46 +17,19 @@ public class Player
 {
     private int playerID;
     private String name;
-    private int chips;
-    private int total;
-    ArrayList<Card> playerHand = new ArrayList<Card>();
+    Hand hand;
+    Bank bank;
 
-    public Player(int playerID, String name, int chips)
+    public Player(int playerID, String name, Bank bank, Hand hand)
     {
         this.playerID = playerID;
         this.name = name;
-        this.chips = chips;
+        this.bank = bank;
+        this.hand = hand;
     }
 
-    public void addCard (Card card)
-    {
-        playerHand.add(card);
-    }
-
-    public void currentHand ()
-    {
-        System.out.println("You have: ");
-        for (Card card : playerHand)
-        {
-            System.out.println(card.toString());
-        }
-        System.out.println("Your hand is worth: " + currentTotal());
-    }
-
-    public int currentTotal ()
-    {
-        for (Card card : playerHand)
-        {
-            total += card.value();
-        }
-        return total;
-    }
     public String toString()
     {
-        return "Player{" +
-                "playerID=" + playerID +
-                ", name='" + name + '\'' +
-                ", chips=" + chips +
-                '}';
+        return "Test";
     }
 }
