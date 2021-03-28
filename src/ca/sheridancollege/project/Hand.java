@@ -28,6 +28,11 @@ public class Hand
         hand.add(card);
     }
 
+    public void clearHand()
+    {
+        hand.clear();
+    }
+
     public void currentHand ()
     {
         System.out.println("You have: ");

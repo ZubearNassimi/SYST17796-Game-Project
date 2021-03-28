@@ -19,16 +19,11 @@ public class PlayBlackjack
   {
     Scanner input = new Scanner(System.in);
     ArrayList<Player> players = new ArrayList<>();
-
     System.out.println("Hello!, Welcome to Blackjack, Would you like to start a game?");
     System.out.println("Press 1 for Yes, 2 for No");
     int wantToPlay = input.nextInt();
 
-    if (wantToPlay != 1)
-    {
-      System.exit(0);
-    }
-    else
+    while (wantToPlay == 1)
     {
       System.out.println("Great! First, how many players will be playing?");
       int numberOfPlayers = input.nextInt();
@@ -43,8 +38,16 @@ public class PlayBlackjack
         Hand playerHand = new Hand();
         players.add(new Player(playerID, name, bank, playerHand));
       }
+      do
+      {
+        startGame(players);
+        System.out.println("Do you want to play again?");
+        System.out.println("Press 1 for Yes, 2 for No");
+        wantToPlay = input.nextInt();
+      }
+      while (wantToPlay == 1);
 
-      startGame(players);
+      System.out.println("Thank you for playing Blackjack!");
     }
 
   }
@@ -53,6 +56,7 @@ public class PlayBlackjack
   {
     Scanner input = new Scanner(System.in);
     Hand dealerHand = new Hand();
+    dealerHand.clearHand();
     Dealer dealer = new Dealer(dealerHand);
     Deck deck = new Deck();
     deck.shuffle();
@@ -60,6 +64,7 @@ public class PlayBlackjack
     dealerHand.addCard(deck.drawCard());
     for (Player player : players)
     {
+      player.hand.clearHand();
       player.hand.addCard(deck.drawCard());
       player.hand.addCard(deck.drawCard());
     }
@@ -133,11 +138,18 @@ public class PlayBlackjack
 
     for (Player player : players)
     {
-      if (player.hand.currentTotal() < 22 && player.hand.currentTotal() > dealerHand.currentTotal())
+      int playerTotal = player.hand.currentTotal();
+      int dealerTotal = dealerHand.currentTotal();
+
+      if (playerTotal < 22 && dealerTotal < 22 && playerTotal > dealerTotal)
       {
         System.out.println(player.toString() + ", You won!");
       }
-      else if (player.hand.currentTotal() == dealerHand.currentTotal())
+      else if (playerTotal < 22 && dealerTotal > 21)
+      {
+        System.out.println(player.toString() + ", You won!");
+      }
+      else if (playerTotal < 22 && dealerTotal < 22 && playerTotal == dealerTotal)
       {
         System.out.println(player.toString() + ", You tied");
       }

@@ -30,6 +30,6 @@ public class Player
 
     public String toString()
     {
-        return "Player " + (playerID);
+        return "Player " + (playerID) + ": " + name;
     }
 }
