@@ -48,7 +48,7 @@ public class Player
 
     public void printResult()
     {
-        System.out.println ("Player " + (playerID) + ": " + name + ": " + winCount + " wins, " + tieCount + " ties and " + lossCount + " losses");
+        System.out.println ("Player " + (playerID) + ": " + name + ": " + winCount + " win(s), " + tieCount + " tie(s) and " + lossCount + " loss(es)");
     }
     public String toString()
     {
