@@ -76,21 +76,9 @@ public class PlayBlackjack
       }
     }
 
-    do
+    while (dealer.hand.checkBlackjack() == false && dealer.hand.checkBust() == false)
     {
-      dealer.fullHand();
-      if (dealerHand.checkBlackjack() == true)
-      {
-        System.out.println("Dealer has Blackjack!");
-        break;
-      }
-      else if (dealerHand.checkBust() == true)
-      {
-        System.out.println("Dealer has bust");
-        break;
-      }
-      else
-      {
+        dealer.fullHand();
         if (dealer.checkDealerDraw() == true)
         {
           System.out.println("Dealer must draw");
@@ -103,8 +91,14 @@ public class PlayBlackjack
           break;
         }
       }
-    }
-    while (dealerHand.checkBlackjack() == false && dealerHand.checkBust() == false);
+      if (dealerHand.checkBlackjack() == true)
+        {
+          System.out.println("Dealer has Blackjack!");
+        }
+      if (dealerHand.checkBust() == true)
+        {
+          System.out.println("Dealer has bust");
+        }
 
     for (Player player : players)
     {

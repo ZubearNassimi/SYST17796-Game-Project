@@ -44,12 +44,12 @@ public class Dealer
     public void firstCard ()
     {
         hand.addCard(dealCard());
+        hand.addCard(dealCard());
         System.out.println("The Dealer's first card is a " + hand.hand.get(0).toString());
     }
 
     public void fullHand()
     {
-        hand.addCard(dealCard());
         System.out.println("The Dealer has: ");
         for (Card card :  hand.hand)
         {
