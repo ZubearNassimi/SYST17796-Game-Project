@@ -15,6 +15,7 @@ import java.util.*;
 
 public class Dealer 
 {
+    ArrayList<Card> deck = new ArrayList<>();
     Hand hand;
 
     public Dealer(Hand hand)
@@ -22,13 +23,33 @@ public class Dealer
         this.hand = hand;
     }
 
+    public void createDeck()
+    {
+        for (Card.Suit suit : Card.Suit.values())
+        {
+            for (Card.Name name : Card.Name.values())
+            {
+                Card card = new Card(name, suit);
+                deck.add(card);
+            }
+        }
+        Collections.shuffle(deck);
+    }
+
+    public Card dealCard()
+    {
+        return deck.remove(0);
+    }
+
     public void firstCard ()
     {
-        System.out.println("The Dealer's first card is a " + hand.hand.get(1).toString());
+        hand.addCard(dealCard());
+        System.out.println("The Dealer's first card is a " + hand.hand.get(0).toString());
     }
 
     public void fullHand()
     {
+        hand.addCard(dealCard());
         System.out.println("The Dealer has: ");
         for (Card card :  hand.hand)
         {

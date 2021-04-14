@@ -15,7 +15,7 @@ import java.util.*;
 
 public class Hand
 {
-    ArrayList<Card> hand = new ArrayList<Card>();
+    ArrayList<Card> hand = new ArrayList<>();
     private int total;
 
     public Hand ()

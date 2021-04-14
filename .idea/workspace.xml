@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="SYST17796-Game-Project:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="77428d5f-e824-479d-a172-6a1d3a02de8d" name="Default Changelist" comment="Updates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/sheridancollege/project/Bank.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/sheridancollege/project/Dealer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/sheridancollege/project/Dealer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ca/sheridancollege/project/Hand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/sheridancollege/project/Hand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ca/sheridancollege/project/PlayBlackjack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/sheridancollege/project/PlayBlackjack.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ca/sheridancollege/project/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/sheridancollege/project/Player.java" afterDir="false" />
@@ -37,6 +44,9 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunManager">
     <configuration name="PlayBlackjack" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -52,15 +62,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -81,6 +89,9 @@
       <updated>1616881546761</updated>
       <workItem from="1616881548165" duration="4554000" />
       <workItem from="1616947815223" duration="7969000" />
+      <workItem from="1617139815155" duration="2000" />
+      <workItem from="1617884819329" duration="70000" />
+      <workItem from="1618439172124" duration="3283000" />
     </task>
     <task id="LOCAL-00001" summary="Updates">
       <created>1616947983189</created>
@@ -140,6 +151,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Updates" />

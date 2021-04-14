@@ -17,17 +17,39 @@ public class Player
 {
     private int playerID;
     private String name;
+    private int winCount = 0;
+    private int tieCount = 0;
+    private int lossCount = 0;
     Hand hand;
-    Bank bank;
 
-    public Player(int playerID, String name, Bank bank, Hand hand)
+
+
+    public Player(int playerID, String name, Hand hand)
     {
         this.playerID = playerID;
         this.name = name;
-        this.bank = bank;
         this.hand = hand;
     }
 
+    public void addWin()
+    {
+        winCount++;
+    }
+
+    public void addTie()
+    {
+        tieCount++;
+    }
+
+    public void addLoss()
+    {
+        lossCount++;
+    }
+
+    public void printResult()
+    {
+        System.out.println ("Player " + (playerID) + ": " + name + ": " + winCount + " wins, " + tieCount + " ties and " + lossCount + " losses");
+    }
     public String toString()
     {
         return "Player " + (playerID) + ": " + name;
