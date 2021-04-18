@@ -17,8 +17,23 @@ public class Dealer
 {
     ArrayList<Card> deck = new ArrayList<>();
     Hand hand;
+    private static Dealer dealer;
 
-    public Dealer(Hand hand)
+    private Dealer()
+    {
+
+    }
+
+    public static Dealer getInstance()
+    {
+        if (dealer == null)
+        {
+            dealer = new Dealer();
+        }
+        return dealer;
+    }
+
+    public void setHand(Hand hand)
     {
         this.hand = hand;
     }
@@ -41,10 +56,21 @@ public class Dealer
         return deck.remove(0);
     }
 
+    public void dealTable(ArrayList<Player> players)
+    {
+        for (Player player : players)
+        {
+            player.hand.clearHand();
+            player.hand.addCard(dealCard());
+            player.hand.addCard(dealCard());
+        }
+        dealer.hand.clearHand();
+        dealer.hand.addCard(dealCard());
+        dealer.hand.addCard(dealCard());
+    }
+
     public void firstCard ()
     {
-        hand.addCard(dealCard());
-        hand.addCard(dealCard());
         System.out.println("The Dealer's first card is a " + hand.hand.get(0).toString());
     }
 

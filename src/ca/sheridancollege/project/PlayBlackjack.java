@@ -17,15 +17,19 @@ public class PlayBlackjack
 {
   static Scanner input = new Scanner(System.in);
   static ArrayList<Player> players = new ArrayList<>();
+  static Dealer dealer = Dealer.getInstance();
+  static Hand dealerHand = new Hand();
   private static int numOfPlayers;
   private static int numOfRounds;
 
   public static void main (String [] args)
   {
     setupGame();
+    dealer.setHand(dealerHand);
     for (int i = 0; i < numOfRounds; i++)
     {
       playRound();
+
       System.out.println("End of Round " + (i + 1));
       for (Player player : players)
       {
@@ -36,17 +40,71 @@ public class PlayBlackjack
 
   public static void playRound ()
   {
-    Hand dealerHand = new Hand();
-    Dealer dealer = new Dealer(dealerHand);
     dealer.createDeck();
+    dealer.dealTable(players);
+    dealer.firstCard();
+    playerTurns();
+    dealerTurn();
+    checkWin();
+  }
+
+  public static void setupGame()
+  {
+    System.out.println("Hello!, Welcome to Blackjack, How many players are there?");
+    do
+    {
+      numOfPlayers = input.nextInt();
+    }
+    while (numOfPlayers == 0);
+    System.out.println("How many rounds would you like to play?");
+    do
+    {
+      numOfRounds = input.nextInt();
+    }
+    while (numOfRounds == 0);
+
+    for (int i = 0;  i < numOfPlayers; i++)
+    {
+      int playerID = i + 1;
+      System.out.println("Player " + playerID + ", What is your name?");
+      String name = input.next();
+      Hand playerHand = new Hand();
+      players.add(new Player(playerID, name, playerHand));
+    }
+  }
+
+  public static void checkWin()
+  {
     for (Player player : players)
     {
-      player.hand.clearHand();
-      player.hand.addCard(dealer.dealCard());
-      player.hand.addCard(dealer.dealCard());
-    }
-    dealer.firstCard();
+      int playerTotal = player.hand.currentTotal();
+      int dealerTotal = dealer.hand.currentTotal();
 
+      if (playerTotal < 22 && dealerTotal < 22 && playerTotal > dealerTotal)
+      {
+        System.out.println(player.toString() + ", You won!");
+        player.addWin();
+      }
+      else if (playerTotal < 22 && dealerTotal > 21)
+      {
+        System.out.println(player.toString() + ", You won!");
+        player.addWin();
+      }
+      else if (playerTotal < 22 && dealerTotal < 22 && playerTotal == dealerTotal)
+      {
+        System.out.println(player.toString() + ", You tied");
+        player.addTie();
+      }
+      else
+      {
+        System.out.println(player.toString() + ", You lost");
+        player.addLoss();
+      }
+    }
+  }
+
+  public static void playerTurns()
+  {
     for (Player player : players)
     {
       System.out.println(player.toString());
@@ -75,81 +133,33 @@ public class PlayBlackjack
         System.out.println("You bust out, better luck next time!");
       }
     }
+  }
 
+  public static void dealerTurn()
+  {
+    dealer.fullHand();
     while (dealer.hand.checkBlackjack() == false && dealer.hand.checkBust() == false)
     {
+      if (dealer.checkDealerDraw() == true)
+      {
+        System.out.println("Dealer must draw");
+        dealer.hand.addCard(dealer.dealCard());
         dealer.fullHand();
-        if (dealer.checkDealerDraw() == true)
-        {
-          System.out.println("Dealer must draw");
-          dealerHand.addCard(dealer.dealCard());
-        }
-        else
-        {
-          System.out.println("Dealer does not need to draw anymore, and they stand");
-          System.out.println("Dealer hand is worth " + dealerHand.currentTotal());
-          break;
-        }
-      }
-      if (dealerHand.checkBlackjack() == true)
-        {
-          System.out.println("Dealer has Blackjack!");
-        }
-      if (dealerHand.checkBust() == true)
-        {
-          System.out.println("Dealer has bust");
-        }
-
-    for (Player player : players)
-    {
-      int playerTotal = player.hand.currentTotal();
-      int dealerTotal = dealerHand.currentTotal();
-
-      if (playerTotal < 22 && dealerTotal < 22 && playerTotal > dealerTotal)
-      {
-        System.out.println(player.toString() + ", You won!");
-        player.addWin();
-      }
-      else if (playerTotal < 22 && dealerTotal > 21)
-      {
-        System.out.println(player.toString() + ", You won!");
-        player.addWin();
-      }
-      else if (playerTotal < 22 && dealerTotal < 22 && playerTotal == dealerTotal)
-      {
-        System.out.println(player.toString() + ", You tied");
-        player.addTie();
       }
       else
       {
-        System.out.println(player.toString() + ", You lost");
-        player.addLoss();
+        System.out.println("Dealer does not need to draw anymore, and they stand");
+        System.out.println("Dealer hand is worth " + dealer.hand.currentTotal());
+        break;
       }
     }
-  }
-
-  public static void setupGame()
-  {
-    System.out.println("Hello!, Welcome to Blackjack, How many players are there?");
-    do
+    if (dealer.hand.checkBlackjack() == true)
     {
-      numOfPlayers = input.nextInt();
+      System.out.println("Dealer has Blackjack!");
     }
-    while (numOfPlayers == 0);
-    System.out.println("How many rounds would you like to play?");
-    do
+    if (dealer.hand.checkBust() == true)
     {
-      numOfRounds = input.nextInt();
-    }
-    while (numOfRounds == 0);
-
-    for (int i = 0;  i < numOfPlayers; i++)
-    {
-      int playerID = i + 1;
-      System.out.println("Player " + playerID + ", What is your name?");
-      String name = input.next();
-      Hand playerHand = new Hand();
-      players.add(new Player(playerID, name, playerHand));
+      System.out.println("Dealer has bust");
     }
   }
 }

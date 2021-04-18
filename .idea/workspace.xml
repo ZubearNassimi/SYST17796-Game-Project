@@ -6,9 +6,14 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77428d5f-e824-479d-a172-6a1d3a02de8d" name="Default Changelist" comment="Small print statement fix">
+    <list default="true" id="77428d5f-e824-479d-a172-6a1d3a02de8d" name="Default Changelist" comment="Final changes + some clean up + Test classes">
+      <change afterPath="$PROJECT_DIR$/Test/ca/sheridancollege/project/DealerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/ca/sheridancollege/project/HandTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/build-impl.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/build-impl.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ca/sheridancollege/project/Dealer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/sheridancollege/project/Dealer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/sheridancollege/project/Deck.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/sheridancollege/project/Hand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/sheridancollege/project/Hand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ca/sheridancollege/project/PlayBlackjack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/sheridancollege/project/PlayBlackjack.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,10 +21,14 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -37,15 +46,31 @@
     <option name="showModules" value="false" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="true" />
+    <property name="create.test.in.the.same.root" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="ca.sheridancollege.project" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.PlayBlackjack">
     <configuration name="PlayBlackjack" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ca.sheridancollege.project.PlayBlackjack" />
       <module name="SYST17796-Game-Project" />
@@ -70,9 +95,75 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DealerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SYST17796-Game-Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ca.sheridancollege.project.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ca.sheridancollege.project" />
+      <option name="MAIN_CLASS_NAME" value="ca.sheridancollege.project.DealerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DealerTest.checkDealerDraw11" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SYST17796-Game-Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ca.sheridancollege.project.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ca.sheridancollege.project" />
+      <option name="MAIN_CLASS_NAME" value="ca.sheridancollege.project.DealerTest" />
+      <option name="METHOD_NAME" value="checkDealerDraw11" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DealerTest.checkDealerDrawOn0" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SYST17796-Game-Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ca.sheridancollege.project.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ca.sheridancollege.project" />
+      <option name="MAIN_CLASS_NAME" value="ca.sheridancollege.project.DealerTest" />
+      <option name="METHOD_NAME" value="checkDealerDrawOn0" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HandTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SYST17796-Game-Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ca.sheridancollege.project.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ca.sheridancollege.project" />
+      <option name="MAIN_CLASS_NAME" value="ca.sheridancollege.project.HandTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.PlayBlackjack" />
+        <item itemvalue="JUnit.HandTest" />
+        <item itemvalue="JUnit.DealerTest" />
+        <item itemvalue="JUnit.DealerTest.checkDealerDrawOn0" />
+        <item itemvalue="JUnit.DealerTest.checkDealerDraw11" />
       </list>
     </recent_temporary>
   </component>
@@ -88,7 +179,9 @@
       <workItem from="1616947815223" duration="7969000" />
       <workItem from="1617139815155" duration="2000" />
       <workItem from="1617884819329" duration="70000" />
-      <workItem from="1618439172124" duration="4572000" />
+      <workItem from="1618439172124" duration="4663000" />
+      <workItem from="1618447019964" duration="2000" />
+      <workItem from="1618779022382" duration="4089000" />
     </task>
     <task id="LOCAL-00001" summary="Updates">
       <created>1616947983189</created>
@@ -146,7 +239,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618442761222</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Bug Fixes">
+      <created>1618444032700</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1618444032700</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,6 +268,8 @@
     <MESSAGE value="Updates" />
     <MESSAGE value="Final Update hopefully" />
     <MESSAGE value="Small print statement fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Small print statement fix" />
+    <MESSAGE value="Bug Fixes" />
+    <MESSAGE value="Final changes + some clean up + Test classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final changes + some clean up + Test classes" />
   </component>
 </project>
